@@ -1,2 +1,2 @@
 # docker-ee
-Docker EE scripts and stuff
+Docker EE DCA Study Material
