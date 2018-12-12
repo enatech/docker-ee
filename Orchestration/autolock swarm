@@ -1,0 +1,14 @@
+Docker version 1.13 onwards allows to autolock the swarm duing initialization as well as at a later stage. Docker swarm
+can be autolocked to protect the raft logs for the manager nodes and TLS communication between swarm nodes.
+
+#docker swarm init --autolock
+
+(this command provides a key that should be used to unlock the swarm when a manager restarts)
+
+#docker swarm update --autolock=true
+(to set autolock at a later stage)
+
+#docker swarm unlock
+- Give the key 
+
+Unlock of the swarm is only needed when docker is restarted on the manager node.
