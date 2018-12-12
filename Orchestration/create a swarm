@@ -1,0 +1,24 @@
+Create a docker swarm -
+
+Docker swarm can be created from a master manager node. The node should have docker installed on it.
+
+#docker swarm init 
+(optional --advertise-addr <IP of the Master Manager node>)
+
+Now you can add any number of nodes to the swarm either as other manager nodes, or as worker nodes. A swarm can have more than one manager.
+Before a node can join the swarm as a manager or a worker, it needs a token from the master manager using below command -
+
+#docker swarm join-token manager|worker
+
+To add a manager to the swarm -
+#docker swarm join --token <TOKEN for manager> <IP of the Master Manager Node> 
+
+To add a worker node to the swarm -
+#docker swarm join --token <TOKEN for worker> <IP of the Master Manager Node>
+
+Check the swarm -
+To list all the nodes in a swarm -
+#docker node ls
+
+To check the details on the swarm -
+#docker info
