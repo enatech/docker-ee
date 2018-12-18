@@ -1,0 +1,18 @@
+List networks
+#docker network ls
+
+Sample output
+
+NETWORK ID          NAME                DRIVER              SCOPE
+464e15e7e2de        bridge              bridge              local
+4f4e7ww445c6        host                host                local
+def334395449        none                null                local
+
+bridge network is used to run multiple containers on a node.
+overlay network is used to have containers communicate across nodes in a swarm. Users can create their own network using any of the drivers.
+host network is to run standalone docker containers on a Docker host
+
+#docker network create --driver bridge <image>
+
+Inspect a network
+#docker network inspect <network name>
