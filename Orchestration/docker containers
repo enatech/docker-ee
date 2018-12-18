@@ -1,0 +1,11 @@
+List all running containers
+#docker ps
+
+List all containers including the exited
+#docker ps -a
+
+Run a alpine container
+#docker run -d -rm -p <port on the node>:<port on the container> alphine:latest 
+
+Exec inside a running container
+#docker exec -it <container id or image> /bin/bash
