@@ -1,0 +1,16 @@
+Create a service to be run in the swarm
+#docker service create --replicas 1 --name test <image>
+
+List the services
+#docker service ls
+
+Scale a running service
+#docker service scale <service name> <number>
+or
+#docker service update --replica=10 <service name>
+
+Rollback changes made to the service configuration
+#docker service rollback 
+
+Inspect a service
+#docker service inspect <service name>
