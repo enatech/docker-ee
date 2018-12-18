@@ -14,3 +14,6 @@ Rollback changes made to the service configuration
 
 Inspect a service
 #docker service inspect <service name>
+
+Docker service - replicated vs global - a global service is on that runs on all nodes while replicated service runs the specific number of replicas.
+
