@@ -1,0 +1,7 @@
+Volumes are used for data persistence in a docker container. Volume can be specified either via -v or --mount option. 
+
+#docker run -d --name test -v <volume name>:<path>:ro <image>
+
+#docker run -f --name test --mount source=<volume name>,destination=<path>,readonly <image>
+
+Docker service create does not support -v so use --mount option.
