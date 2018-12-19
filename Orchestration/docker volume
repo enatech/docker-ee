@@ -5,3 +5,7 @@ Volumes are used for data persistence in a docker container. Volume can be speci
 #docker run -f --name test --mount source=<volume name>,destination=<path>,readonly <image>
 
 Docker service create does not support -v so use --mount option.
+
+List volumes
+#docker volume ls
+#docker inspect volume <name>
