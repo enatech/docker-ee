@@ -12,7 +12,14 @@ docker build -t <tag> .
 #Docker list all running images
 docker ps
 docker ps -a (to list exited and running images)
+#Check all the docker image layers
+docker history <imagename>
 #Check docker logs
 docker logs <container name or id>
 #Tag an image
 docker tag <sourceimage>:<tag> <destinationimage>:<tag>
+#Save an image to tar ball
+docker save <image> > <path> eg docker save mongo > /home/user/mongo.tar
+#Load the image from tarfile
+docker load < /home/user/mongo.tar
+
