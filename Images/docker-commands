@@ -1,0 +1,18 @@
+#Key docker commands
+
+#List all images
+docker images or docker image ls
+#Prune exited or unused images
+docker prune all or docker image prune
+#Pull or Push an image to docker hub (docker login hub.docker.com before pushing the image)
+docker image push <imagename>:<tag> or docker push <imagename>:<tag>
+docker image pull <imagename>:<tag> or docker pull <imagename>:<tag>
+#Build an image (Dockerfile and relevant files should be in the local path)
+docker build -t <tag> .
+#Docker list all running images
+docker ps
+docker ps -a (to list exited and running images)
+#Check docker logs
+docker logs <container name or id>
+#Tag an image
+docker tag <sourceimage>:<tag> <destinationimage>:<tag>
