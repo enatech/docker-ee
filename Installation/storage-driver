@@ -1,11 +1,13 @@
-Storage driver is where images are stored on a host.
+Storage driver is where images as well as container's writable layer are stored on a host.
 
 Common storage drivers
 
-CentOS - devicemapper
-RHEL - devicemapper and overlay2
+CentOS - devicemapper requires direct-lvm for prod as loopback-lvm has poor performance. CentOS 8 supports overlay2 now.
+RHEL - devicemapper and overlay2 - overlay2 is preferred.
 Ubuntu - aufs3
 Oracle Linux - devicemapper
+vfs - is used for testing purpose as poor performance
+zfs and btrfs - are used for backup filesystems and require more maintenance and setup.
 
 To check which driver being used -
 #docker info | grep Storage
