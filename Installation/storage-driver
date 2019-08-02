@@ -2,12 +2,12 @@ Storage driver is where images as well as container's writable layer are stored 
 
 Common storage drivers
 
-CentOS - devicemapper requires direct-lvm for prod as loopback-lvm has poor performance. CentOS 8 supports overlay2 now.
-RHEL - devicemapper and overlay2 - overlay2 is preferred.
-Ubuntu - aufs3
+CentOS - devicemapper requires direct-lvm for prod as loopback-lvm has poor performance. CentOS 8 supports overlay2 now. devicemapper operates at block level.
+RHEL - devicemapper and overlay2 - overlay2 is preferred, it operates at file level.
+Ubuntu - aufs3 operates at file level.
 Oracle Linux - devicemapper
 vfs - is used for testing purpose as poor performance
-zfs and btrfs - are used for backup filesystems and require more maintenance and setup.
+zfs and btrfs - are used for backup filesystems, require lot of memory and require more maintenance and setup.
 
 To check which driver being used -
 #docker info | grep Storage
