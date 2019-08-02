@@ -1,0 +1,16 @@
+Storage driver is where images are stored on a host.
+
+Common storage drivers
+
+CentOS - devicemapper
+RHEL - devicemapper and overlay2
+Ubuntu - aufs3
+Oracle Linux - devicemapper
+
+To check which driver being used -
+#docker info | grep Storage
+
+Storage drivers can be setup in /etc/docker/daemon.json
+{
+  "storage-driver":"overlay"
+}
