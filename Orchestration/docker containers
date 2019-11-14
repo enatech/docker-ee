@@ -9,3 +9,9 @@ Run a alpine container
 
 Exec inside a running container
 #docker exec -it <container id or image> /bin/bash
+
+Docker limits and reservations (reservations are used as soft limit to schedule a container on a node, limit is hard limit for a container)
+#docker run -d -rm --memory 4GB --memory-reservation 2GB
+
+Limit the cpu to half of the cores on a node
+#docker run -d -rm --cpuset-cpus .5 --name nginxtest nginx
