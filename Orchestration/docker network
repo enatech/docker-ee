@@ -10,9 +10,12 @@ def334395449        none                null                local
 
 bridge network is used to run multiple containers on a node.
 overlay network is used to have containers communicate across nodes in a swarm. Users can create their own network using any of the drivers.
-host network is to run standalone docker containers on a Docker host
+Overlay network is first created on the manager node and then added when a task is scheduled on a worker node.
+host network is to run standalone docker containers on a Docker host, where containers use the host network so they don't have their own networking and ports...they use the host ports.
 
 #docker network create --driver bridge <image>
 
 Inspect a network
 #docker network inspect <network name>
+
+By default the user-defined networks have --attachable set to true but ingress overlay have --attachable set to false as ingress overlay is used by docker for swarm networking between nodes.
